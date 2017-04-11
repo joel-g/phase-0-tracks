@@ -2,6 +2,11 @@
 	font-size: .8em;
 }
 
+p:first-child {
+	font-size: 1.2em;
+}
+
+
 .job {
 background-color: #E9E5DC;
 border-radius: 20px;
@@ -16,4 +21,8 @@ margin-bottom: 10px
 .list:hover {
 	color: teal;
 	font-size: 1.2em;
+}
+
+li:nth-of-type(2) {
+	text-decoration: underline;
 }
