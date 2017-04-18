@@ -1,0 +1,33 @@
+________Robot Elevator_______
+
+If currentFloor == desiredFloor
+	exit elevator
+Else
+	move to button panel
+
+pressButton(desiredFloor)
+Repeat
+
+
+
+
+
+_____Navigating a 4 way stop____
+
+If stopped at 4 way stop
+	If other cars are present == False
+		Drive through.
+	Else if car is to your right
+		Wait for car to drive through then drive through
+	Else if car is to your left or opposite you
+		Drive through
+
+
+
+_____putting away groceries_____
+
+While groceries are on counter
+	If item is perishible place in fridge
+	Else if item is spice place in spice cupboard
+	Else if item is canned place in cans cupboard
+	Else place item in dry goods cupboard
