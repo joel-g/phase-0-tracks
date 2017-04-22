@@ -49,7 +49,7 @@ end
 
 	else
 		puts "what is the password to decrypt?"
-		puts decrypt(gets.chomp)
+		puts "DECRYPTED MESSAGE IS: #{decrypt(gets.chomp)}"
 	# else
 	# 	puts "must type 'encrypt' or 'decrypt'"
 	end
