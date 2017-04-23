@@ -5,7 +5,7 @@ num_employees.times do
 		
 	puts "What is your name?"
 	employee = gets.chomp
-	puts "How old are you?"
+	puts "How old are you this year?"
 	age = gets.chomp.to_i
 	puts "What year were you born?"
 	birthyear = gets.chomp.to_i
