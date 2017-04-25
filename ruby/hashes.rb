@@ -27,7 +27,7 @@ customer[:home_size] = gets.chomp.to_i
 
 puts customer
 
-puts "To change an answer enter key to change or type exit"
+puts "Enter a key name to change a value OR type exit to quit."
 
 update = gets.chomp.to_sym
 if update == "exit"
