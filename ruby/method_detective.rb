@@ -4,7 +4,7 @@
 # When there's more than one suspect who could have
 # committed the crime, add additional calls to prove it.
 
-# "iNvEsTiGaTiOn".<???>
+"iNvEsTiGaTiOn".swapcase
 # => “InVeStIgAtIoN”
 
 # "zom".<???>
@@ -13,7 +13,7 @@
 # "enhance".<???>
 # => "    enhance    "
 
-# "Stop! You’re under arrest!".<???>
+"Stop! You’re under arrest!".upcase
 # => "STOP! YOU’RE UNDER ARREST!"
 
 # "the usual".<???>
