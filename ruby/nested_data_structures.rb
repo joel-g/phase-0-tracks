@@ -34,4 +34,7 @@ cars[:american][:chevrolet][:trucks][1] = 'Colorado'
 # Replace obsolete "S10" truck with current model Colorado
 cars[:japanese][:honda].pop
 # Delete discontinued Honda Prelude model
-p cars
+
+puts "The #{cars[:japanese][:honda][0]} is the greatest sedan ever made."
+puts "The #{cars[:japanese][:nissan][2]} is fantastic but not in my budget."
+puts "If I were truck shopping I would want a #{cars[:japanese][:toyota][:trucks][0]}"
