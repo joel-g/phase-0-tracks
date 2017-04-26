@@ -13,7 +13,7 @@
 "enhance".center(15)
 # => "    enhance    "
 
-"Stop! You’re under arrest!".upcase
+puts "Stop! You're under arrest!".upcase
 # => "STOP! YOU’RE UNDER ARREST!"
 
 "the usual".concat(" suspects")
