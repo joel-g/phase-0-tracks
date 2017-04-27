@@ -16,52 +16,66 @@
 
 #reverse and split full name
 real_name = gets.chomp
-vowels = ['u', 'o', 'i', 'e', 'a']
-split_name = real_name.downcase.split(' ').reverse
-# cut up names
-first_name = split_name[0].chars
-last_name = split_name[1].chars
 
+def next_vowel(input) 
 x = 0
-first_name.length.times do
-case first_name[x]
-when "a"
-	first_name[x] = "e"
-when "e"
-	first_name[x] = "i"
-when "i"
-	first_name[x] = "o"
-when "o"
-	first_name[x] = "u"
-when "u"
-	first_name[x] = "a"
-else 
+input.length.times do
+	case input[x]
+	when "a"
+		input[x] = "e"
+	when "e"
+		input[x] = "i"
+	when "i"
+		input[x] = "o"
+	when "o"
+		input[x] = "u"
+	when "u"
+		input[x] = "a"
+	else 
+	end
+	x += 1
+	end
+return input
 end
+
+def next_cons(input)
+x = 0
+input.length.times do
+	input[x].gsub!('j','k')
 x += 1
 end
-
-x = 0
-last_name.length.times do
-case last_name[x]
-when "a"
-	last_name[x] = "e"
-when "e"
-	last_name[x] = "i"
-when "i"
-	last_name[x] = "o"
-when "o"
-	last_name[x] = "u"
-when "u"
-	last_name[x] = "a"
-else 
-end
-x += 1
+return input
 end
 
+def aliasizer(rn)
+split_name = rn.downcase.split(' ').reverse
+first_name = next_vowel(split_name[0].chars)
+last_name = next_vowel(split_name[1].chars)
+first_name = next_cons(first_name)
+last_name = next_cons(last_name)
+new_name = first_name.join.capitalize + " " + last_name.join.capitalize
+return new_name
+end
 
+p aliasizer(real_name)
 
-p first_name
-p last_name
-p split_name
+# x = 0
+# last_name.length.times do
+# case last_name[x]
+# when "a"
+# 	last_name[x] = "e"
+# when "e"
+# 	last_name[x] = "i"
+# when "i"
+# 	last_name[x] = "o"
+# when "o"
+# 	last_name[x] = "u"
+# when "u"
+# 	last_name[x] = "a"
+# else 
+# end
+# x += 1
+# end
+
 # p first_name
 # p last_name
