@@ -118,12 +118,13 @@ end
 # the year 2000. Do not use any special built-in methods.
 # ----
 puts "DRILL #2:"
-
+new_extinct_animals = {}
 extinct_animals.each do |key, value| 
-	if value > 1999
-	extinct_animals = extinct_animals - {key => value}
+	if value < 2000
+new_extinct_animals[key] = value
 	end
 end
+extinct_animals = new_extinct_animals
 puts extinct_animals
 
 # 3. Our calculations were completely off, turns out all of those animals went
@@ -132,6 +133,14 @@ puts extinct_animals
 # Do not use any special built-in methods.
 # ----
 
+puts "DRILL #3"
+extinct_animals.each do |key, value|
+	extinct_animals[key] = value -= 3
+end
+
+puts extinct_animals
+
+
 # 4. You've heard that the following animals might be extinct, but you're not sure.
 # Check if they're included in extinct_animals, one by one:
 # "Andean Cat"
@@ -139,9 +148,34 @@ puts extinct_animals
 # "Saiga Antelope"
 # Do not use any special built-in methods.
 # ----
+puts "DRILL #4"
+
+maybe_extinct_animals = ["Andean Cat", "Dodo", "Saiga Antelope"]
+
+x_counter = 0
+maybe_extinct_animals.length.times do
+extinct = nil
+	extinct_animals.each do |k, v|
+		if 
+			maybe_extinct_animals[x_counter] == k
+			extinct = true
+		end
+	end
+	if extinct == true 
+		puts "Yes, #{maybe_extinct_animals[x_counter]} is extinct"
+		else
+		puts "No, #{maybe_extinct_animals[x_counter]} is not extinct"
+	
+	end
+x_counter += 1
+end
+
 
 # 5. We just found out that the Passenger Pigeon is actually not extinct!
 # Remove them from extinct_animals and return the key value pair as a two item array.
 # Find the built-in method that helps you accomplish this in the Ruby documentation
 # for Hashes.
 # ----
+puts "DRILL #5"
+
+p extinct_animals.assoc("Dodo")
