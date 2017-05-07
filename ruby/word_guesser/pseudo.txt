@@ -1,0 +1,10 @@
+word guesser class
+
+take input word
+
+guess = word length
+
+print _ _ _ _ _ _ to represent word and indicate length
+
+update _ _ _ _ _ _ to show correctly guess letters
+
