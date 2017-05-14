@@ -6,9 +6,7 @@
 // return the variable at after comparing all the strings
 
 // # RELEASE 0
-
 arr = ["long phrase","longer phrase", "very very long phrase", "longest phrase", "lil phrase"];
-
 cars = [
 "Honda",
 "Lexus",
@@ -21,7 +19,6 @@ cars = [
 function longestStr(arr) {
 var length = 0;
 var longest;
-
 for(var i=0; i < arr.length; i++){
 			if (arr[i].length > length) {
         length = arr[i].length;
@@ -30,37 +27,58 @@ for(var i=0; i < arr.length; i++){
 } 
 	return longest;
 }
-
+// DRIVER CODE
 console.log(longestStr(arr));
 console.log(longestStr(cars));
 
 
 // # RELEASE 1
+// comparing key value pairs
+// accept two objects as arguments
+// create an array from the keys of each object
+// create an array from the values (MUCH HARDER THAN MAKING ONE FROM KEYS WTF JAVASCRIPT)
+// check array element pairs for equality
+// return true or false for a match
 
-var animal1 = {animal: "Dog", fur: "gray"};
-var animal2 = {animal: "Dog", fur: "brown"};
-
+var animal1 = {animal: "dog", fur: "gray"};
+var animal2 = {animal: "dog", fur: "brown"};
+var animal3 = {animal: "cat", fur: "yellow"};
+var animal4 = {animal: "mouse", fur: "white"};
+var person1 = {name: "matteus", age: 13}
+var person2 = {name: "diego", age: 10}
+var person3 = {name: "matteus", age: 14}
 
 function matches(obj1, obj2) {
-
-
-var keys1 = Object.keys(obj1);
-var keys2 = Object.keys(obj2);
-// var values1 = Object.values(obj1);
-// var values2 = Object.values(obj2);
-for(var key in obj1) {
-    var values1 = obj1[key];
+	var match = false // match starts out false and will update to true if theres a match
+	var keys1 = Object.keys(obj1); // create an array of the keys - 1st object
+	var keys2 = Object.keys(obj2); // create an array of the keys - 2nd object
+	var values1 = [] // empty arrays for the values
+	var values2 = []
+	for (var i=0; i<keys1.length; i++){ // adding values to array - 1st object
+		values1.push(obj1[keys1[i]])
+		}
+	for (var i=0; i<keys2.length; i++){ // adding values to array - 1st object
+	values2.push(obj2[keys2[i]])
+		}
+		// now that we have everything in arrays we can check for equality
+	for (var c=0; c<keys1.length; c++){
+		if (keys1[c] == keys2[c] && values1[c] == values2[c]){
+			match = true
+		}
+	}
+return match
 }
-
-// for (var i = 0; i < keys1.length; i++) {
-//   if keys1[i] == keys2[i];
-// }
-return values1
-}
-
-matches(animal1, animal2)
-// console.log(keys1)
-console.log(matches(animal1, animal2))
+// DRIVER CODE to test the function
+console.log(matches(animal3, animal4)); // false
+console.log(matches(animal1, animal2)); // true
+console.log(matches(animal1, animal3)); // false
+console.log(matches(animal1, person2)); // false - note that it doesn't break if there no key matches either
+console.log(matches(person1, person2)); // false
+console.log(matches(person1, person3)); // true
+// console.log(keys1); Debugging code that no longer works because the variables are no longer global
+// console.log(keys2)
+// console.log(values1)
+// console.log(values2)
 
 
 // # RELEASE 2
