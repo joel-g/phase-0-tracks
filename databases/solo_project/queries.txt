@@ -1,0 +1,58 @@
+sqlite> select * from cars;
+		1|2|Civic|DX|1990|false
+		2|1|Integra|GSR|1998|true
+		3|1|Integra|LS|1994|false
+		4|2|Prelude|SH|1996|true
+		5|2|Civic|Si|1999|true
+		6|3|Celica|GT|1993|false
+		7|3|Supra|turbo|1998|true
+		8|3|MR2|turbo|1991|false
+		9|2|Accord|LX|1993|false
+
+sqlite> update cars SET year=1992 where model="Accord";
+	sqlite> 
+
+
+sqlite> select cars.*, make.make FROM cars JOIN make ON cars.make_id = make.id;
+		1|2|Civic|DX|1990|false|Honda
+		2|1|Integra|GSR|1998|true|Acura
+		3|1|Integra|LS|1994|false|Acura
+		4|2|Prelude|SH|1996|true|Honda
+		5|2|Civic|Si|1999|true|Honda
+		6|3|Celica|GT|1993|false|Toyota
+		7|3|Supra|turbo|1998|true|Toyota
+		8|3|MR2|turbo|1991|false|Toyota
+		9|2|Accord|LX|1992|false|Honda
+
+sqlite> select cars.model, make.make FROM cars JOIN make ON cars.make_id = make.id;
+		Civic|Honda
+		Integra|Acura
+		Integra|Acura
+		Prelude|Honda
+		Civic|Honda
+		Celica|Toyota
+		Supra|Toyota
+		MR2|Toyota
+		Accord|Honda
+
+sqlite> delete from cars where model="Supra";
+		sqlite> 
+
+sqlite> SELECT model, trim
+   ...> from cars
+   ...> inner join make
+   ...> on cars.make_id = make.id;
+		Civic|DX
+		Integra|GSR
+		Integra|LS
+		Prelude|SH
+		Civic|Si
+		Celica|GT
+		MR2|turbo
+		Accord|LX
+
+sqlite> SELECT model, trim, year
+   ...> from cars
+   ...> right join make
+   ...> on cars.make_id = make.id;
+Error: RIGHT and FULL OUTER JOINs are not currently supported  (I guess that's what makes it "Lite")
