@@ -1,0 +1,11 @@
+sqlite> SELECT businesses.name, users.last_name, reviews.stars, reviews.comment FROM reviews JOIN users ON reviews.user_id=users.id JOIN businesses ON reviews.business_id= businesses.id;
+			Grundy Hollow Wedding Chapel|Jolie|4|great service, will definitely get married here again
+			Amir's Towing|Wonder|1|towed me just because I parked in handicapped. terrible!
+			The Beagle Nightclub|Pitt|5|Such a great time I don't even remember it
+			Lotus Yoga|Kaling|3|Good place. Kind of smelly.
+			Lotus Yoga|Pitt|2|Hurt my quads. Don't like yoga
+			sqlite> 
+
+sqlite> SELECT businesses.name, users.first_name, users.last_name, reviews.stars, reviews.comment FROM reviews JOIN users ON reviews.user_id=users.id LEFT OUTER JOIN businesses ON reviews.business_id= businesses.id WHERE businesses.id = 4;
+		Lotus Yoga|Mandy|Kaling|3|Good place. Kind of smelly.
+		Lotus Yoga|Bradford|Pitt|2|Hurt my quads. Don't like yoga
