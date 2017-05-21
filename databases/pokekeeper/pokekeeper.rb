@@ -9,7 +9,7 @@ db.results_as_hash = true
 
 #Create a fresh database of Pokémon. This database will have no cards saved as "owned" by the user
 def reset_collection(db)
-	db.execute("DROP TABLE pokemon")
+	db.execute("DROP TABLE IF EXISTS pokemon")
 	# db.execute("DROP TABLE stages")
 	print "Generating Pokédex..."
 	
@@ -27,8 +27,8 @@ def reset_collection(db)
 	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Ivysaur', 'Stage 1', 'Grass/Poison', 'false')")
 	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Venusaur', 'Stage 2', 'Grass/Poison', 'false')")
 	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Charmander', 'Basic', 'Fire', 'false')")
-	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Charmeleon', 'Stage 1', 'Fire', 'true')")
-	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Charizard', 'Stage 2', 'Fire/Flying', 'true')")
+	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Charmeleon', 'Stage 1', 'Fire', 'false')")
+	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Charizard', 'Stage 2', 'Fire/Flying', 'false')")
 	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Squirtle', 'Basic', 'Water', 'false')")
 	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Wartortle', 'Stage 1', 'Water', 'false')")
 	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Blastoise', 'Stage 2', 'Water', 'false')")
@@ -122,26 +122,12 @@ def reset_collection(db)
 	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Haunter', 'Stage 1', 'Ghost/Poison', 'false')")
 	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Gengar', 'Stage 2', 'Ghost/Poison', 'false')")
 	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Onix', 'Basic', 'Rock/Ground', 'false')")
-	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Grimer', 'Basic', 'Poison', 'false')")
-	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Hypno', 'Stage 1', 'Poison', 'false')")
+	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Drowzee', 'Basic', 'Psychic', 'false')")
+	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Hypno', 'Stage 1', 'Psychic', 'false')")
 	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Krabby', 'Basic', 'Water', 'false')")
 	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Kingler', 'Stage 1', 'Water', 'false')")
 	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Voltorb', 'Basic', 'Electric', 'false')")
 	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Electrode', 'Stage 1', 'Electric', 'false')")
-
-
-
-	#If I decide it makes sense to keep stages in a separate table
-	# create_stages_table = <<-SQL  
-	#   CREATE TABLE IF NOT EXISTS stages(
-	#     id INT,
-	#     stage VARCHAR(255)
-	#   )
-	# SQL
-	# db.execute(create_stages_table) # Creates an empty table to store the Pokemon stages
-	# db.execute("INSERT INTO stages (id, stage) VALUES (0, 'Basic')")
-	# db.execute("INSERT INTO stages (id, stage) VALUES (1, 'Stage 1')")
-	# db.execute("INSERT INTO stages (id, stage) VALUES (2, 'Stage 2')")
 end
 
 def print_detailed_list(list)
@@ -150,70 +136,242 @@ def print_detailed_list(list)
 	end
 end
 
-#LISTS
-all_pokemon = db.execute("SELECT * FROM pokemon")
-owned = db.execute("SELECT * FROM pokemon WHERE owned='true'")
-unowned = db.execute("SELECT * FROM pokemon WHERE owned='false'")
-	#by stage
-basic = db.execute("SELECT * FROM pokemon WHERE stage='Basic'")
-stage1 = db.execute("SELECT * FROM pokemon WHERE stage='Stage 1'")
-stage2 = db.execute("SELECT * FROM pokemon WHERE stage='Stage 2'")
-	#by type
-bug = db.execute("SELECT * FROM pokemon WHERE type LIKE '%bug%'")
-dragon = db.execute("SELECT * FROM pokemon WHERE type LIKE '%dragon%'")
-ice = db.execute("SELECT * FROM pokemon WHERE type LIKE '%ice%'")
-fighting = db.execute("SELECT * FROM pokemon WHERE type LIKE '%fighting%'")
-fire = db.execute("SELECT * FROM pokemon WHERE type LIKE '%fire%'")
-flying = db.execute("SELECT * FROM pokemon WHERE type LIKE '%flying%'")
-grass = db.execute("SELECT * FROM pokemon WHERE type LIKE '%grass%'")
-ghost = db.execute("SELECT * FROM pokemon WHERE type LIKE '%ghost%'")
-electric = db.execute("SELECT * FROM pokemon WHERE type LIKE '%electric%'")
-normal = db.execute("SELECT * FROM pokemon WHERE type LIKE '%normal%'")
-poison = db.execute("SELECT * FROM pokemon WHERE type LIKE '%poison%'")
-psychic = db.execute("SELECT * FROM pokemon WHERE type LIKE '%psychic%'")
-rock = db.execute("SELECT * FROM pokemon WHERE type LIKE '%rock%'")
-water = db.execute("SELECT * FROM pokemon WHERE type LIKE '%water%'")
-fairy = db.execute("SELECT * FROM pokemon WHERE type LIKE '%fairy%'")
-dark = db.execute("SELECT * FROM pokemon WHERE type LIKE '%dark%'")
-steel = db.execute("SELECT * FROM pokemon WHERE type LIKE '%steel%'")
-	#owned by type
-owned_bug = db.execute("SELECT * FROM pokemon WHERE owned='true' AND type LIKE '%bug%'")
-owned_fire = db.execute("SELECT * FROM pokemon WHERE owned='true' AND type LIKE '%fire%'")
-owned_fire = db.execute("SELECT * FROM pokemon WHERE owned='true' AND type LIKE '%fire%'")
-owned_fire = db.execute("SELECT * FROM pokemon WHERE owned='true' AND type LIKE '%fire%'")
-owned_fire = db.execute("SELECT * FROM pokemon WHERE owned='true' AND type LIKE '%fire%'")
-owned_fire = db.execute("SELECT * FROM pokemon WHERE owned='true' AND type LIKE '%fire%'")
-owned_fire = db.execute("SELECT * FROM pokemon WHERE owned='true' AND type LIKE '%fire%'")
-owned_fire = db.execute("SELECT * FROM pokemon WHERE owned='true' AND type LIKE '%fire%'")
-owned_fire = db.execute("SELECT * FROM pokemon WHERE owned='true' AND type LIKE '%fire%'")
-owned_fire = db.execute("SELECT * FROM pokemon WHERE owned='true' AND type LIKE '%fire%'")
-owned_fire = db.execute("SELECT * FROM pokemon WHERE owned='true' AND type LIKE '%fire%'")
-owned_fire = db.execute("SELECT * FROM pokemon WHERE owned='true' AND type LIKE '%fire%'")
-
-#DRIVER CODE
-
-puts "Welcome to POKÉKEEPER. I will help you organize your Pokémon card collection."
-puts "What is your name?"  # Possible future feature: allow multiple users to save their own collection data
-user = gets.chomp.downcase
-puts "Type NEW to start a new collection or OPEN to continue with your saved collection. (A new collection will overwrite your old one)"
-answer = gets.chomp.upcase
-if answer == "NEW"
-	puts "This will overwrite any saved collections. Are you sure? (y/n)"
-	confirm = gets.chomp.downcase
-	if confirm == "y"
-		reset_collection(db)
-	elsif confirm == "n"
-		puts "OK, we'll continue with your current collection"
+def print_quick_list(list)
+	list.each do |pokemon|
+		puts "#{pokemon['name']} ##{pokemon['id']}"
 	end
-elsif answer == "OPEN"
+end
+
+def add_to_collection(db, pokemon)
+	db.execute("UPDATE pokemon SET owned='true' WHERE name='#{pokemon}'")
+	$owned = db.execute("SELECT * FROM pokemon WHERE owned='true'")
+end
+
+def update_lists(db)
+	# USER MODIFIED LISTS
+	$owned = db.execute("SELECT * FROM pokemon WHERE owned='true'")
+	$unowned = db.execute("SELECT * FROM pokemon WHERE owned='false'")
+		#owned by type
+	$owned_bug = db.execute("SELECT * FROM pokemon WHERE owned='true' AND type LIKE '%bug%'")
+	$owned_dragon = db.execute("SELECT * FROM pokemon WHERE owned='true' AND type LIKE '%dragon%'")
+	$owned_ice = db.execute("SELECT * FROM pokemon WHERE owned='true' AND type LIKE '%ice%'")
+	$owned_fighting = db.execute("SELECT * FROM pokemon WHERE owned='true' AND type LIKE '%fighting%'")
+	$owned_fire = db.execute("SELECT * FROM pokemon WHERE owned='true' AND type LIKE '%fire%'")
+	$owned_flying = db.execute("SELECT * FROM pokemon WHERE owned='true' AND type LIKE '%flying%'")
+	$owned_grass = db.execute("SELECT * FROM pokemon WHERE owned='true' AND type LIKE '%grass%'")
+	$owned_ghost = db.execute("SELECT * FROM pokemon WHERE owned='true' AND type LIKE '%ghost%'")
+	$owned_electric = db.execute("SELECT * FROM pokemon WHERE owned='true' AND type LIKE '%electric%'")
+	$owned_normal = db.execute("SELECT * FROM pokemon WHERE owned='true' AND type LIKE '%normal%'")
+	$owned_poison = db.execute("SELECT * FROM pokemon WHERE owned='true' AND type LIKE '%poison%'")
+	$owned_psychic = db.execute("SELECT * FROM pokemon WHERE owned='true' AND type LIKE '%psychic%'")
+	$owned_rock = db.execute("SELECT * FROM pokemon WHERE owned='true' AND type LIKE '%rock%'")
+	$owned_water = db.execute("SELECT * FROM pokemon WHERE owned='true' AND type LIKE '%water%'")
+	$owned_fairy = db.execute("SELECT * FROM pokemon WHERE owned='true' AND type LIKE '%fairy%'")
+	$owned_dark = db.execute("SELECT * FROM pokemon WHERE owned='true' AND type LIKE '%dark%'")
+	$owned_steel = db.execute("SELECT * FROM pokemon WHERE owned='true' AND type LIKE '%steel%'")
+		#owned by stage
+	$owned_basic = db.execute("SELECT * FROM pokemon WHERE owned='true' AND stage='Basic'")
+	$owned_stage1 = db.execute("SELECT * FROM pokemon WHERE owned='true' AND stage='Stage 1'")
+	$owned_stage2 = db.execute("SELECT * FROM pokemon WHERE owned='true' AND stage='Stage 2'")
+end
+
+# BASE LISTS
+#big lists
+name_array = [Bulbasaur,Ivysaur
+Venusaur,Charmander,Charmeleon,Charizard
+Squirtle,Wartortle,Blastoise,Caterpie
+Metapod,Butterfree,Weedle,Kakuna
+Beedrill,Pidgey,Pidgeotto,Pidgeot
+Rattata,Raticate,Spearow,Fearow,
+Ekans,Arbok,Pikachu,Raichu,Sandshrew,Sandslash
+Nidoran♀,Nidorina,Nidoqueen,Nidoran♂,
+Nidorino,Nidoking,
+Clefairy,Clefable,
+Vulpix,Ninetales,Jigglypuff
+Wigglytuff,Zubat
+Golbat,Oddish
+Gloom,Vileplume
+Paras
+Parasect
+Venonat
+Venomoth
+Diglett
+Dugtrio
+Meowth
+Persian
+Psyduck
+Golduck
+Mankey
+Primeape
+Growlithe
+Arcanine
+Poliwag
+Poliwhirl
+Poliwrath
+Abra
+Kadabra
+Alakazam
+Machop
+Machoke
+Machamp
+Bellsprout
+Weepinbell
+Victreebel
+Tentacool
+Tentacruel
+Geodude
+Graveler
+Golem
+Ponyta
+Rapidash
+Slowpoke
+Slowbro
+Magnemite
+Magneton
+Farfetchd
+Doduo
+Dodrio
+Seel
+Dewgong
+Grimer
+Muk
+Shellder
+Cloyster
+Gastly
+Haunter
+Gengar
+Onix
+Drowzee
+Hypno
+Krabby
+Kingler
+Voltorb
+Electrode
+Exeggcute
+Exeggutor
+Cubone
+Marowak
+Hitmonlee
+Hitmonchan
+Lickitung
+Koffing
+Weezing
+Rhyhorn
+Rhydon
+Chansey
+Tangela
+Kangaskhan
+Horsea
+Seadra
+Goldeen
+Seaking
+Staryu
+Starmie
+Mr. Mime
+Scyther
+Jynx
+Electabuzz
+Magmar
+Pinsir
+Tauros
+Magikarp
+Gyarados
+Lapras
+Ditto
+Eevee
+Vaporeon
+Jolteon
+Flareon
+Porygon
+Omanyte
+Omastar
+Kabuto
+Kabutops
+Aerodactyl
+Snorlax
+Articuno
+Zapdos
+Moltres
+Dratini
+Dragonair
+Dragonite
+Mewtwo
+Mew]
+
+$all_pokemon = db.execute("SELECT * FROM pokemon")
+#by stage
+$basic = db.execute("SELECT * FROM pokemon WHERE stage='Basic'")
+$stage1 = db.execute("SELECT * FROM pokemon WHERE stage='Stage 1'")
+$stage2 = db.execute("SELECT * FROM pokemon WHERE stage='Stage 2'")
+#by type
+$bug = db.execute("SELECT * FROM pokemon WHERE type LIKE '%bug%'")
+$dragon = db.execute("SELECT * FROM pokemon WHERE type LIKE '%dragon%'")
+$ice = db.execute("SELECT * FROM pokemon WHERE type LIKE '%ice%'")
+$fighting = db.execute("SELECT * FROM pokemon WHERE type LIKE '%fighting%'")
+$fire = db.execute("SELECT * FROM pokemon WHERE type LIKE '%fire%'")
+$flying = db.execute("SELECT * FROM pokemon WHERE type LIKE '%flying%'")
+$grass = db.execute("SELECT * FROM pokemon WHERE type LIKE '%grass%'")
+$ghost = db.execute("SELECT * FROM pokemon WHERE type LIKE '%ghost%'")
+$electric = db.execute("SELECT * FROM pokemon WHERE type LIKE '%electric%'")
+$normal = db.execute("SELECT * FROM pokemon WHERE type LIKE '%normal%'")
+$poison = db.execute("SELECT * FROM pokemon WHERE type LIKE '%poison%'")
+$psychic = db.execute("SELECT * FROM pokemon WHERE type LIKE '%psychic%'")
+$rock = db.execute("SELECT * FROM pokemon WHERE type LIKE '%rock%'")
+$water = db.execute("SELECT * FROM pokemon WHERE type LIKE '%water%'")
+$fairy = db.execute("SELECT * FROM pokemon WHERE type LIKE '%fairy%'")
+$dark = db.execute("SELECT * FROM pokemon WHERE type LIKE '%dark%'")
+$steel = db.execute("SELECT * FROM pokemon WHERE type LIKE '%steel%'")
+
+
+##################################################
+#UI - When opened user decides to continue with saved collection or start a new one
+puts "Welcome to POKÉKEEPER. I will help you organize your Pokémon card collection."
+puts "Type N to start a (N)ew collection or C to (C)ontinue with your saved collection."
+answer = gets.chomp.upcase
+if answer == "N"
+	puts "This will overwrite any saved collections. Are you sure? (Y/N)"
+	confirm = gets.chomp.downcase
+		if confirm == "y"
+			reset_collection(db)
+		else
+			puts "OK, we'll continue with your current collection"
+		end
 else	
-	puts "Please type NEW or OPEN"
+	puts "OK, we'll continue with your current collection"
+end
+
+update_lists(db) #creates users owned lists
+
+#UI - meat of the UI - user can add cards to their collection and view categorized lists
+loop do
+	puts "Commands: (A)dd to your collection, (V)iew your collection, (Q)uit"
+	command = gets.chomp.upcase
+	 if command == 'A'
+	 	loop do
+	 		puts "Type a Pokémon name to add to your collection. Type D when done adding Pokémon"
+	 		add = gets.chomp.downcase.capitalize
+	 			add_to_collection(db, add)
+	 			# if $all_pokemon.has_value?("#{add}")
+	 			# 	puts "Added {#add} to your collection."
+	 			# else 
+	 			# 	puts "#{add} is not a valid Generation 1 Pokémon."
+	 			# end
+	 		break if add == 'D'
+	 	end
+	 elsif command == 'V'
+	 else
+	 	puts "Please use A or V."
+	 break if command == 'Q'
+	end
 end
 
 
-print_detailed_list(owned_fire)
 
 
+##################################################
+
+p $all_pokemon
+print_quick_list($owned)
 
 
 #Allow users to add pokemon to collection by changing owned to "TRUE"
@@ -221,9 +379,3 @@ print_detailed_list(owned_fire)
 #Allow users to view owned and unowned Pokémon cards.
 
 
-
-
-# TEST CODE
-
-
-# print_pokedex(db)
