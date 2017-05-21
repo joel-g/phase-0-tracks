@@ -18,14 +18,28 @@ create_empty_table = <<-SQL
   CREATE TABLE IF NOT EXISTS pokemon(
     id INTEGER PRIMARY KEY,
     name VARCHAR(255),
-    stage VARCHAR(255),
+    stage INTEGER,
     type VARCHAR(255),
     owned BOOLEAN
   )
 SQL
 
+
+
 db.execute(create_empty_table) # Creates an empty table
 db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Bulbasaur', 'Basic', 'Grass/Poison', 'false')")
+db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Ivysaur', 'Stage 1', 'Grass/Poison', 'false')")
+db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Venusaur', 'Stage 2', 'Grass/Poison', 'false')")
+db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Charmander', 'Basic', 'Fire', 'false')")
+db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Squirtle', 'Basic', 'Water', 'false')")
+db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Caterpie', 'Basic', 'Bug', 'false')")
+db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Weedle', 'Basic', 'Bug/Poison', 'false')")
+db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Pidgey', 'Basic', 'Normal/Flying', 'false')")
+db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Rattata', 'Basic', 'Normal', 'false')")
+db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Spearow', 'Basic', 'Normal/Flying', 'false')")
+db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Ekans', 'Basic', 'Poison', 'false')")
+db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Pikachu', 'Basic', 'Electric', 'false')")
+db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Sandshrew', 'Sandslah', 'Poison', 'false')")
 
 
 
