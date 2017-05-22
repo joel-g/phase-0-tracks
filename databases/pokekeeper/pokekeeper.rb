@@ -52,10 +52,10 @@ def reset_collection(db)
 	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Raichu', 'Stage 1', 'Electric', 'false')")
 	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Sandshrew', 'Basic', 'Poison', 'false')")
 	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Sandslash', 'Stage 1', 'Poison', 'false')")
-	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Nidoran ♀', 'Basic', 'Poison', 'false')")
+	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Nidoran f', 'Basic', 'Poison', 'false')")
 	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Nidorana', 'Stage 1', 'Poison', 'false')")
 	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Nidoqueen', 'Stage 2', 'Poison/Ground', 'false')")
-	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Nidoran ♂', 'Basic', 'Poison', 'false')")
+	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Nidoran m', 'Basic', 'Poison', 'false')")
 	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Nidorino', 'Stage 1', 'Poison', 'false')")
 	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Nidoking', 'Stage 2', 'Poison/Ground', 'false')")
 	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Clefairy', 'Basic', 'Normal', 'false')")
@@ -108,7 +108,7 @@ def reset_collection(db)
 	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Slowbro', 'Stage 1', 'Water/Psychic', 'false')")
 	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Magnemite', 'Basic', 'Electric/Steel', 'false')")
 	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Magneton', 'Stage 1', 'Electric/Steel', 'false')")
-	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Farfetch`d', 'Basic', 'Normal/Flying', 'false')")		
+	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Farfetchd', 'Basic', 'Normal/Flying', 'false')")		
 	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Doduo', 'Basic', 'Normal/Flying', 'false')")
 	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Dodrio', 'Stage 1', 'Normal/Flying', 'false')")
 	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Seel', 'Basic', 'Water', 'false')")
@@ -128,15 +128,51 @@ def reset_collection(db)
 	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Kingler', 'Stage 1', 'Water', 'false')")
 	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Voltorb', 'Basic', 'Electric', 'false')")
 	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Electrode', 'Stage 1', 'Electric', 'false')")
+	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Exeggcute', 'Basic', 'Grass/Psychic', 'false')")
+	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Exeggcutor', 'Stage 1', 'Grass/Psychic', 'false')")
+	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Cubone', 'Basic', 'Ground', 'false')")
+	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Marowak', 'Stage 1', 'Ground', 'false')")
+	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Hitmonlee', 'Basic', 'Fighting', 'false')")
+	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Hitmonchan', 'Basic', 'Fighting', 'false')")
+	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Lickitung', 'Basic', 'Normal', 'false')")
+	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Koffing', 'Basic', 'Poison', 'false')")
+	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Koffing', 'Basic', 'Poison', 'false')")
+	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Voltorb', 'Basic', 'Electric', 'false')")
+
+	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Voltorb', 'Basic', 'Electric', 'false')")
+
+	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Voltorb', 'Basic', 'Electric', 'false')")
+
+	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Voltorb', 'Basic', 'Electric', 'false')")
+
+	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Voltorb', 'Basic', 'Electric', 'false')")
+
+	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Voltorb', 'Basic', 'Electric', 'false')")
+
+	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Voltorb', 'Basic', 'Electric', 'false')")
+
+	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Voltorb', 'Basic', 'Electric', 'false')")
+
+	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Voltorb', 'Basic', 'Electric', 'false')")
+
+	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Voltorb', 'Basic', 'Electric', 'false')")
+
+	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Voltorb', 'Basic', 'Electric', 'false')")
+
+
+
+
 end
 
 def print_detailed_list(list)
+	puts "========================="
 	list.each do |pokemon|
 	 puts "Pokedex: ##{pokemon['id']} #{pokemon['name']} is a #{pokemon['stage']} #{pokemon['type']} type Pokémon"
 	end
 end
 
 def print_quick_list(list)
+	puts "========================="
 	list.each do |pokemon|
 		puts "#{pokemon['name']} ##{pokemon['id']}"
 	end
@@ -144,7 +180,7 @@ end
 
 def add_to_collection(db, pokemon)
 	db.execute("UPDATE pokemon SET owned='true' WHERE name='#{pokemon}'")
-	$owned = db.execute("SELECT * FROM pokemon WHERE owned='true'")
+	update_lists(db)
 end
 
 def update_lists(db)
@@ -177,126 +213,17 @@ end
 
 # BASE LISTS
 #big lists
-name_array = [Bulbasaur,Ivysaur
-Venusaur,Charmander,Charmeleon,Charizard
-Squirtle,Wartortle,Blastoise,Caterpie
-Metapod,Butterfree,Weedle,Kakuna
-Beedrill,Pidgey,Pidgeotto,Pidgeot
-Rattata,Raticate,Spearow,Fearow,
-Ekans,Arbok,Pikachu,Raichu,Sandshrew,Sandslash
-Nidoran♀,Nidorina,Nidoqueen,Nidoran♂,
-Nidorino,Nidoking,
-Clefairy,Clefable,
-Vulpix,Ninetales,Jigglypuff
-Wigglytuff,Zubat
-Golbat,Oddish
-Gloom,Vileplume
-Paras
-Parasect
-Venonat
-Venomoth
-Diglett
-Dugtrio
-Meowth
-Persian
-Psyduck
-Golduck
-Mankey
-Primeape
-Growlithe
-Arcanine
-Poliwag
-Poliwhirl
-Poliwrath
-Abra
-Kadabra
-Alakazam
-Machop
-Machoke
-Machamp
-Bellsprout
-Weepinbell
-Victreebel
-Tentacool
-Tentacruel
-Geodude
-Graveler
-Golem
-Ponyta
-Rapidash
-Slowpoke
-Slowbro
-Magnemite
-Magneton
-Farfetchd
-Doduo
-Dodrio
-Seel
-Dewgong
-Grimer
-Muk
-Shellder
-Cloyster
-Gastly
-Haunter
-Gengar
-Onix
-Drowzee
-Hypno
-Krabby
-Kingler
-Voltorb
-Electrode
-Exeggcute
-Exeggutor
-Cubone
-Marowak
-Hitmonlee
-Hitmonchan
-Lickitung
-Koffing
-Weezing
-Rhyhorn
-Rhydon
-Chansey
-Tangela
-Kangaskhan
-Horsea
-Seadra
-Goldeen
-Seaking
-Staryu
-Starmie
-Mr. Mime
-Scyther
-Jynx
-Electabuzz
-Magmar
-Pinsir
-Tauros
-Magikarp
-Gyarados
-Lapras
-Ditto
-Eevee
-Vaporeon
-Jolteon
-Flareon
-Porygon
-Omanyte
-Omastar
-Kabuto
-Kabutops
-Aerodactyl
-Snorlax
-Articuno
-Zapdos
-Moltres
-Dratini
-Dragonair
-Dragonite
-Mewtwo
-Mew]
+name_array = ["Bulbasaur","Ivysaur","Venusaur","Charmander","Charmeleon","Charizard","Squirtle","Wartortle","Blastoise","Caterpie",
+	"Metapod","Butterfree","Weedle","Kakuna","Beedrill","Pidgey","Pidgeotto","Pidgeot","Rattata","Raticate","Spearow","Fearow","Ekans",
+	"Arbok","Pikachu","Raichu","Sandshrew","Sandslash","Nidoran f","Nidorina","Nidoqueen","Nidoran m","Nidorino","Nidoking","Clefairy","Clefable",
+	"Vulpix","Ninetales","Jigglypuff","Wigglytuff","Zubat","Golbat","Oddish","Gloom","Vileplume","Paras","Parasect","Venonat","Venomoth","Diglett",
+	"Dugtrio","Meowth","Persian","Psyduck","Golduck","Mankey","Primeape","Growlithe","Arcanine","Poliwag","Poliwhirl","Poliwrath","Abra","Kadabra",
+	"Alakazam","Machop","Machoke","Machamp","Bellsprout","Weepinbell","Victreebel","Tentacool","Tentacruel","Geodude","Graveler","Golem","Ponyta",
+	"Rapidash","Slowpoke","Slowbro","Magnemite","Magneton","Farfetch'd","Doduo","Dodrio","Seel","Dewgong","Grimer","Muk","Shellder","Cloyster","Gastly",
+	"Haunter","Gengar","Onix","Drowzee","Hypno","Krabby","Kingler","Voltorb","Electrode","Exeggcute","Exeggutor","Cubone","Marowak","Hitmonlee","Hitmonchan",
+	"Lickitung","Koffing","Weezing","Rhyhorn","Rhydon","Chansey","Tangela","Kangaskhan","Horsea","Seadra","Goldeen","Seaking","Staryu","Starmie","Mr. Mime",
+	"Scyther","Jynx","Electabuzz","Magmar","Pinsir","Tauros","Magikarp","Gyarados","Lapras","Ditto","Eevee","Vaporeon","Jolteon","Flareon","Porygon","Omanyte",
+	"Omastar","Kabuto","Kabutops","Aerodactyl","Snorlax","Articuno","Zapdos","Moltres","Dratini","Dragonair","Dragonite","Mewtwo","Mew"]
 
 $all_pokemon = db.execute("SELECT * FROM pokemon")
 #by stage
@@ -319,7 +246,6 @@ $psychic = db.execute("SELECT * FROM pokemon WHERE type LIKE '%psychic%'")
 $rock = db.execute("SELECT * FROM pokemon WHERE type LIKE '%rock%'")
 $water = db.execute("SELECT * FROM pokemon WHERE type LIKE '%water%'")
 $fairy = db.execute("SELECT * FROM pokemon WHERE type LIKE '%fairy%'")
-$dark = db.execute("SELECT * FROM pokemon WHERE type LIKE '%dark%'")
 $steel = db.execute("SELECT * FROM pokemon WHERE type LIKE '%steel%'")
 
 
@@ -347,22 +273,113 @@ loop do
 	puts "Commands: (A)dd to your collection, (V)iew your collection, (Q)uit"
 	command = gets.chomp.upcase
 	 if command == 'A'
+	 	puts "#####################################################################################################"
 	 	loop do
 	 		puts "Type a Pokémon name to add to your collection. Type D when done adding Pokémon"
 	 		add = gets.chomp.downcase.capitalize
 	 			add_to_collection(db, add)
-	 			# if $all_pokemon.has_value?("#{add}")
-	 			# 	puts "Added {#add} to your collection."
-	 			# else 
-	 			# 	puts "#{add} is not a valid Generation 1 Pokémon."
-	 			# end
+	 			if name_array.include?(add)
+	 				puts "Added #{add} to your collection."
+	 			elsif add == "D"
+	 			else 
+	 				puts "Sorry, #{add} is not a valid Generation 1 Pokémon."
+	 				puts "(For Farfetchd don't use an apostrophe. For Nidoran you must specify male or female: 'Nidoran (f)'"
+	 			end
 	 		break if add == 'D'
 	 	end
 	 elsif command == 'V'
+	 	puts "#####################################################################################################"
+	 	puts "To view Pokémon in your collection by type enter a type name. Just enter the FIRST 3 letters:"
+	 	puts "(Bug, Dragon, Ice, Fighting, Flying, Grass, Ghost, Electric, Normal, Poison, Psychic, Rock, Water, Fairy, Steel)"
+	 	puts "Enter 0, 1, or 2 to view your collection by stage (Basic, Stage 1, Stage 2)"
+	 	puts "Enter 'mine' to view your entire collection. Enter 'not mine' to see all Pokémon you don't have"
+	 	puts "To view Pokémon by type including those you don't own type 'all' in front of the damage type: 'all dra'" 
+	 	puts "D when done."
+	 	puts "#####################################################################################################"
+	 	loop do	
+	 		view = gets.chomp.downcase.capitalize
+	 		break if view == "D"
+	 		case view
+	 		when "Bug"
+	 			print_detailed_list($owned_bug)
+	 		when "Dra"
+	 			print_detailed_list($owned_dragon)
+	 		when "Ice"
+	 			print_detailed_list($owned_ice)
+	 		when "Fig"
+	 			print_detailed_list($owned_fighting)
+	 		when "Fly"
+	 			print_detailed_list($owned_flying)
+	 		when "Gra"
+	 			print_detailed_list($owned_grass)
+	 		when "Gho"
+	 			print_detailed_list($owned_ghost)
+	 		when "Ele"
+	 			print_detailed_list($owned_electric)
+	 		when "Nor"
+	 			print_detailed_list($owned_normal)
+	 		when "Poi"
+	 			print_detailed_list($owned_poison)
+	 		when "Psy"
+	 			print_detailed_list($owned_psychic)
+	 		when "Roc"
+	 			print_detailed_list($owned_rock)
+	 		when "Wat"
+	 			print_detailed_list($owned_water)
+	 		when "Fai"
+	 			print_detailed_list($owned_fairy)
+	 		when "Ste"
+	 			print_detailed_list($owned_steel)	 
+	 		when "0"
+	 			print_detailed_list($owned_basic)					 				 				 				 				 				 				 				 				 				 			
+	 		when "1"
+	 			print_detailed_list($owned_stage1)	
+	 		when "2"
+	 			print_detailed_list($owned_stage2)	
+	 		when "mine"
+	 			print_detailed_list($owned)
+	 		when "not mine"
+	 			print_detailed_list($unowned)		
+	 		when "All bug"
+	 			print_quick_list($bug)
+	 		when "All dra"
+	 			print_quick_list($dragon)
+	 		when "All ice"
+	 			print_quick_list($ice)
+	 		when "All fig"
+	 			print_quick_list($fighting)
+	 		when "All fly"
+	 			print_quick_list($flying)
+	 		when "All gra"
+	 			print_quick_list($grass)
+	 		when "All gho"
+	 			print_quick_list($ghost)
+	 		when "All ele"
+	 			print_quick_list($electric)
+	 		when "All nor"
+	 			print_quick_list($normal)
+	 		when "All poi"
+	 			print_quick_list($poison)
+	 		when "All psy"
+	 			print_quick_list($psychic)
+	 		when "All roc"
+	 			print_quick_list($rock)
+	 		when "All wat"
+	 			print_quick_list($water)
+	 		when "All fai"
+	 			print_quick_list($fairy)
+	 		when "All ste"
+	 			print_quick_list($steel)		
+	 		else
+	 			puts "#{command} is not a valid command. Remember you only need the first 3 letters of a damage type"
+	 		end	
+	 	end
+	 elsif command == 'Q'
+	 	puts "Thank you for using POKÉKEEPER"
 	 else
-	 	puts "Please use A or V."
-	 break if command == 'Q'
+	 	puts "Please enter A or V."
 	end
+ 	break if command == 'Q'
 end
 
 
@@ -370,8 +387,8 @@ end
 
 ##################################################
 
-p $all_pokemon
-print_quick_list($owned)
+# p $all_pokemon
+# print_quick_list($owned)
 
 
 #Allow users to add pokemon to collection by changing owned to "TRUE"
