@@ -93,7 +93,7 @@ def reset_collection(db)
 	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Machop', 'Basic', 'Fighting', 'false')")
 	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Machoke', 'Stage 1', 'Fighting', 'false')")
 	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Machamp', 'Stage 2', 'Fighting', 'false')")
-	puts "..."
+	print "..."
 	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Bellsprout', 'Basic', 'Grass/Poison', 'false')")
 	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Weepinbell', 'Stage 1', 'Grass/Poison', 'false')")
 	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Victreebel', 'Stage 2', 'Grass/Poison', 'false')")
@@ -103,6 +103,7 @@ def reset_collection(db)
 	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Graveler', 'Stage 1', 'Rock/Ground', 'false')")
 	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Golem', 'Stage 2', 'Rock/Ground', 'false')")
 	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Ponyta', 'Basic', 'Fire', 'false')")
+	puts "..."	
 	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Rapidash', 'Stage 1', 'Fire', 'false')")
 	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Slowpoke', 'Basic', 'Water/Psychic', 'false')")
 	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Slowbro', 'Stage 1', 'Water/Psychic', 'false')")
@@ -117,13 +118,14 @@ def reset_collection(db)
 	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Muk', 'Stage 1', 'Poison', 'false')")
 	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Shellder', 'Basic', 'Water', 'false')")
 	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Cloyster', 'Stage 1', 'Water/Ice', 'false')")
-	puts "Accessing Kanto Region..."	
+	print "Accessing Kanto Region..."	
 	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Ghastly', 'Basic', 'Ghost/Poison', 'false')")
 	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Haunter', 'Stage 1', 'Ghost/Poison', 'false')")
 	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Gengar', 'Stage 2', 'Ghost/Poison', 'false')")
 	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Onix', 'Basic', 'Rock/Ground', 'false')")
 	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Drowzee', 'Basic', 'Psychic', 'false')")
 	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Hypno', 'Stage 1', 'Psychic', 'false')")
+	print "..."
 	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Krabby', 'Basic', 'Water', 'false')")
 	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Kingler', 'Stage 1', 'Water', 'false')")
 	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Voltorb', 'Basic', 'Electric', 'false')")
@@ -132,42 +134,61 @@ def reset_collection(db)
 	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Exeggcutor', 'Stage 1', 'Grass/Psychic', 'false')")
 	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Cubone', 'Basic', 'Ground', 'false')")
 	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Marowak', 'Stage 1', 'Ground', 'false')")
+	puts "..."
 	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Hitmonlee', 'Basic', 'Fighting', 'false')")
 	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Hitmonchan', 'Basic', 'Fighting', 'false')")
 	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Lickitung', 'Basic', 'Normal', 'false')")
 	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Koffing', 'Basic', 'Poison', 'false')")
-	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Koffing', 'Basic', 'Poison', 'false')")
-	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Voltorb', 'Basic', 'Electric', 'false')")
-
-	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Voltorb', 'Basic', 'Electric', 'false')")
-
-	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Voltorb', 'Basic', 'Electric', 'false')")
-
-	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Voltorb', 'Basic', 'Electric', 'false')")
-
-	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Voltorb', 'Basic', 'Electric', 'false')")
-
-	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Voltorb', 'Basic', 'Electric', 'false')")
-
-	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Voltorb', 'Basic', 'Electric', 'false')")
-
-	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Voltorb', 'Basic', 'Electric', 'false')")
-
-	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Voltorb', 'Basic', 'Electric', 'false')")
-
-	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Voltorb', 'Basic', 'Electric', 'false')")
-
-	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Voltorb', 'Basic', 'Electric', 'false')")
-
-
-
-
+	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Weezing', 'Stage 1', 'Poison', 'false')")
+	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Rhyhorn', 'Basic', 'Ground/Rock', 'false')")
+	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Rhydon', 'Stage 1', 'Ground/Rock', 'false')")
+	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Chansey', 'Basic', 'Normal', 'false')")
+	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Tangela', 'Basic', 'Grass', 'false')")
+	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Kangaskhan', 'Basic', 'Normal', 'false')")
+	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Horsea', 'Basic', 'Water', 'false')")
+	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Seadra', 'Stage 1', 'Water', 'false')")
+	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Goldeen', 'Basic', 'Water', 'false')")
+	print "Loading Pokéballs..."	
+	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Seaking', 'Stage 1', 'Water', 'false')")
+	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Staryu', 'Basic', 'Water', 'false')")
+	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Starmie', 'Stage 1', 'Water', 'false')")
+	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Mr Mime', 'Basic', 'Psychic', 'false')")
+	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Scyther', 'Basic', 'Bug/Flying', 'false')")
+	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Jinx', 'Basic', 'Ice/Psychic', 'false')")
+	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Electabuzz', 'Basic', 'Electric', 'false')")	
+	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Magmar', 'Basic', 'Fire', 'false')")
+	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Pinsir', 'Basic', 'Bug', 'false')")
+	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Tauros', 'Basic', 'Normal', 'false')")
+	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Magikarp', 'Basic', 'Water', 'false')")
+	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Gyarados', 'Stage 1', 'Water/Flying', 'false')")
+	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Lapras', 'Basic', 'Water/Ice', 'false')")
+	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Ditto', 'Basic', 'Normal', 'false')")
+	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Eevee', 'Basic', 'Normal', 'false')")
+	puts "..."
+	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Vaporeon', 'Stage 1', 'Water', 'false')")
+	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Jolteon', 'Stage 1', 'Electric', 'false')")
+	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Flareon', 'Stage 1', 'Fire', 'false')")
+	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Porygon', 'Basic', 'Normal', 'false')")
+	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Omanyte', 'Basic', 'Rock/Water', 'false')")
+	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Omastar', 'Stage 1', 'Rock/Water', 'false')")
+	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Kabuto', 'Basic', 'Rock/Water', 'false')")
+	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Kabutops', 'Stage 1', 'Rock/Water', 'false')")
+	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Aerodactyl', 'Basic', 'Rock/Flying', 'false')")	
+	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Snorlax', 'Basic', 'Electric', 'false')")	
+	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Articuno', 'Basic', 'Ice/Flying', 'false')")	
+	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Zapdos', 'Basic', 'Electric/Flying', 'false')")	
+	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Moltres', 'Basic', 'Fire/Flying', 'false')")	
+	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Dratini', 'Basic', 'Dragon', 'false')")	
+	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Dragonair', 'Stage 1', 'Dragon', 'false')")	
+	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Dragonite', 'Stage 2', 'Dragon/Flying', 'false')")	
+	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Mewtwo', 'Basic', 'Psychic', 'false')")	
+	db.execute("INSERT INTO pokemon (name, stage, type, owned) VALUES ('Mew', 'Basic', 'Psychic', 'false')")		
 end
 
 def print_detailed_list(list)
 	puts "========================="
 	list.each do |pokemon|
-	 puts "Pokedex: ##{pokemon['id']} #{pokemon['name']} is a #{pokemon['stage']} #{pokemon['type']} type Pokémon"
+	 puts "Pokedex: ##{pokemon['id']} #{pokemon['name']} - #{pokemon['stage']} - #{pokemon['type']} type"
 	end
 end
 
@@ -283,7 +304,7 @@ loop do
 	 			elsif add == "D"
 	 			else 
 	 				puts "Sorry, #{add} is not a valid Generation 1 Pokémon."
-	 				puts "(For Farfetchd don't use an apostrophe. For Nidoran you must specify male or female: 'Nidoran (f)'"
+	 				puts "(For Farfetchd and Mr Mime don't use punctuation. For Nidoran you must specify male or female: 'Nidoran (f)'"
 	 			end
 	 		break if add == 'D'
 	 	end
@@ -292,7 +313,7 @@ loop do
 	 	puts "To view Pokémon in your collection by type enter a type name. Just enter the FIRST 3 letters:"
 	 	puts "(Bug, Dragon, Ice, Fighting, Flying, Grass, Ghost, Electric, Normal, Poison, Psychic, Rock, Water, Fairy, Steel)"
 	 	puts "Enter 0, 1, or 2 to view your collection by stage (Basic, Stage 1, Stage 2)"
-	 	puts "Enter 'mine' to view your entire collection. Enter 'not mine' to see all Pokémon you don't have"
+	 	puts "Enter 'mine' to view your entire collection. Enter 'not mine' to see all Pokémon you don't have. Enter 'all' for all Pokémon"
 	 	puts "To view Pokémon by type including those you don't own type 'all' in front of the damage type: 'all dra'" 
 	 	puts "D when done."
 	 	puts "#####################################################################################################"
@@ -336,9 +357,9 @@ loop do
 	 			print_detailed_list($owned_stage1)	
 	 		when "2"
 	 			print_detailed_list($owned_stage2)	
-	 		when "mine"
+	 		when "Mine"
 	 			print_detailed_list($owned)
-	 		when "not mine"
+	 		when "Not mine"
 	 			print_detailed_list($unowned)		
 	 		when "All bug"
 	 			print_quick_list($bug)
@@ -369,9 +390,11 @@ loop do
 	 		when "All fai"
 	 			print_quick_list($fairy)
 	 		when "All ste"
-	 			print_quick_list($steel)		
+	 			print_quick_list($steel)	
+	 		when "All"
+	 			print_detailed_list($all_pokemon)	
 	 		else
-	 			puts "#{command} is not a valid command. Remember you only need the first 3 letters of a damage type"
+	 			puts "#{view} is not a valid command. Remember you only need the first 3 letters of a damage type"
 	 		end	
 	 	end
 	 elsif command == 'Q'
@@ -382,17 +405,11 @@ loop do
  	break if command == 'Q'
 end
 
-
-
-
-##################################################
+################################################## TEST CODE
 
 # p $all_pokemon
 # print_quick_list($owned)
 
-
 #Allow users to add pokemon to collection by changing owned to "TRUE"
 
 #Allow users to view owned and unowned Pokémon cards.
-
-
