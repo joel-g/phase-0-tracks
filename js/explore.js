@@ -12,7 +12,7 @@ function reverse(str) {
 	return new_string
 }
 
-var example_string = reverse("test_string");
+var example_string = reverse("test string");
 
 if (1293109428 == 1293109428) {
 	console.log(example_string);
