@@ -1,0 +1,74 @@
+body {
+	text-align: center;
+	align-content: center;
+	background: gray;
+}
+
+div {
+	padding: 10px;
+	margin: 0px auto;
+}
+
+header {
+	padding: 10px;
+	border-radius: 25px;
+	margin: 0 auto;
+	width: 50%;
+	background: silver;
+	font-family: Arial;
+	font-weight: bold;
+	text-align: center;
+}
+
+p {
+	border: 1px solid black;
+	font-family: Helvetica;
+	width: 80%;
+	background: silver;
+	padding: 10px;
+	margin: 10px auto;
+	border-radius: 15px;
+	text-align: center;
+	font-size: 1.4em;
+}
+
+table {
+font-size: 1.2em;
+margin: 0 auto;	
+}
+
+h2 {
+	font-family: Arial;
+}
+
+td {
+	background: white;
+}
+
+.frames {
+	padding: 10px;
+}
+
+footer {
+	background: silver;
+}
+
+#logo {
+	background: url("images/Honda-logotype.png");
+	background-color: white;
+	background-size: 50%;
+}
+
+a:visited {
+	color: teal;
+}
+
+
+@media screen and (max-width: 500px) {
+  p {
+    font-size: 1em;
+  }
+  header {
+font-size: 1em;
+    }
+}
