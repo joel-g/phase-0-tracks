@@ -17,6 +17,14 @@ get '/students/new' do
   erb :new_student
 end
 
+get '/roster/:campus' do
+#	campus = params[:campus]
+	@roster = db.execute("SELECT * FROM students WHERE campus=?", [params[:campus]])
+	erb :school
+end
+
+
+
 # create new students via
 # a form
 post '/students' do
@@ -25,3 +33,12 @@ post '/students' do
 end
 
 # add static resources
+
+post '/campuses' do
+  db.execute("INSERT INTO campuses (city, state) VALUES (?,?)", [params['city'], params['state']])
+  redirect '/'
+end
+
+get '/campus/new' do
+  erb :new_campus
+end
